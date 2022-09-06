@@ -8,9 +8,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication
 @MapperScan("com.atguigu.mybatis_plus.mapper")
 public class MybatisPlusApplication {
-
     public static void main(String[] args) {
-        System.out.println("HELLO,WORLD");
         SpringApplication.run(MybatisPlusApplication.class, args);
     }
 
