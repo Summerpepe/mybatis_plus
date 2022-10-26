@@ -1,9 +1,6 @@
 package com.atguigu.mybatis_plus.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.FileFilter;
@@ -17,7 +14,7 @@ import java.util.Date;
 @Data
 public class User {
 
-       // @TableId(type= IdType.ASSIGN_ID)//运用了雪花算法,如果是type= IdType.AUTO就是主键自增
+        @TableId(type= IdType.ASSIGN_ID)//运用了雪花算法,如果是type= IdType.AUTO就是主键自增
         private Long id;
         private String name;
         private Integer age;
@@ -28,4 +25,6 @@ public class User {
 
         @TableField(fill = FieldFill.INSERT_UPDATE)
         private  Date updateTime;
+        @TableLogic //逻辑删除的注解
+        private Integer deleted;
 }
